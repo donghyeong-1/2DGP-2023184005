@@ -39,7 +39,7 @@ def move_tri_leftTop():
 
 def move_tri_leftbottom():
     for y in range(500, 99, -5):
-        x = 100 - (500 - y) * (3/4)
+        x = 400 - (500 - y) * (3/4)
         draw_boy(x, y)
 
 def move_circle():

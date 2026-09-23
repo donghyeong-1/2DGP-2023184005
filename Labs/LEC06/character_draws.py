@@ -33,11 +33,7 @@ def move_circle():
         x = centerX + radius * math.cos(theta)
         y = centerY + radius * math.sin(theta)
 
-        clear_canvas()
-        character.draw(x, y)
-        update_canvas()
-
-        delay(0.01)
+        draw_boy(x, y)
     pass
 
 def move_rectangle():

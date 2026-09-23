@@ -30,6 +30,9 @@ def move_left():
 def move_tri_right():
     pass
 
+def move_tri_leftTop():
+    pass
+
 def move_circle():
     centerX = 400
     centerY = 300
@@ -52,6 +55,7 @@ def move_rectangle():
 
 def move_triangle():
     move_tri_right()
+    move_tri_leftTop()
     pass 
 
 while True:

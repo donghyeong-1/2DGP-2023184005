@@ -60,7 +60,7 @@ def move_circle():
         y = centerY + radius * math.sin(theta)
 
         draw_boy(x, y)
-    pass
+    
 
 def move_rectangle():
     move_top()
@@ -68,20 +68,20 @@ def move_rectangle():
     move_bottom()
     move_left()
     move_finish()
-    pass
+    
 
 def move_triangle():
     move_tri_right()
     move_tri_leftTop()
     move_tri_leftbottom()
     move_tri_finish()
-    pass 
+     
 
 while True:
     move_circle()
     move_rectangle()
     move_triangle()
-    pass
+    
 
 
 close_canvas()

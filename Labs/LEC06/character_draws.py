@@ -5,17 +5,23 @@ import math
 open_canvas(800, 600)
 character = load_image('character.png')
 
+def draw_boy(x, y):
+    clear_canvas()
+    character.draw(x, y)
+    update_canvas()
+    delay(0.01)
+
 def move_top():
-    pass
+    draw_boy(x, y)
 
 def move_right():
-    pass
+    draw_boy(x, y)
 
 def move_bottom():
-    pass
+    draw_boy(x, y)
 
 def move_left():
-    pass
+    draw_boy(x, y)
 
 def move_circle():
     centerX = 400

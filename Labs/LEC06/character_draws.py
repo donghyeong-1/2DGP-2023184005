@@ -34,7 +34,7 @@ def move_tri_right():
 
 def move_tri_leftTop():
     for y in range(100, 501, 5):
-        x = 700 - y * (3/4)
+        x = 700 - (y - 100) * (3/4)
         draw_boy(x, y)
 
 def move_tri_leftbottom():

@@ -24,7 +24,7 @@ def move_bottom():
         draw_boy(x, 500)
 
 def move_left():
-    for y in range(50, 551, 5):
+    for y in range(500, 99, -5):
         draw_boy(50, y)
 
 def move_tri_right():

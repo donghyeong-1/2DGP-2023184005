@@ -28,7 +28,9 @@ def move_left():
         draw_boy(50, y)
 
 def move_tri_right():
-    pass
+    for x in range(100, 701, 5):
+        y = 100
+        draw_boy(x, y)
 
 def move_tri_leftTop():
     pass

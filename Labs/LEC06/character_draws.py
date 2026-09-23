@@ -45,6 +45,10 @@ def move_tri_leftbottom():
         x = 400 - (500 - y) * (3/4)
         draw_boy(x, y)
 
+def move_tri_finish():
+    for x in range(100, 401, 5):
+        draw_boy(x, 100)
+
 def move_circle():
     centerX = 400
     centerY = 300
@@ -70,6 +74,7 @@ def move_triangle():
     move_tri_right()
     move_tri_leftTop()
     move_tri_leftbottom()
+    move_tri_finish()
     pass 
 
 while True:

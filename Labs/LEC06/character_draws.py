@@ -8,6 +8,9 @@ character = load_image('character.png')
 def move_top():
     pass
 
+def move_right():
+    pass
+
 def move_circle():
     centerX = 400
     centerY = 300
@@ -27,6 +30,7 @@ def move_circle():
 
 def move_rectangle():
     move_top()
+    move_right()
     pass
 
 def move_triangle():

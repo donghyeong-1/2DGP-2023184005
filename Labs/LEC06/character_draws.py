@@ -21,7 +21,7 @@ def move_right():
 
 def move_bottom():
     for x in range(750, 49, -5):
-        draw_boy(x, 50)
+        draw_boy(x, 500)
 
 def move_left():
     for y in range(50, 551, 5):

@@ -12,8 +12,8 @@ def draw_boy(x, y):
     delay(0.01)
 
 def move_top():
-    for x in range(50, 751, 5):
-        draw_boy(x, 550)
+    for x in range(400, 751, 5):
+        draw_boy(x, 100)
 
 def move_right():
     for y in range(550, 49, -5):

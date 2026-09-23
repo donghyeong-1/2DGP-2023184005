@@ -47,7 +47,7 @@ def move_circle():
     centerY = 300
     radius = 200
 
-    for degree in range(360):
+    for degree in range(270, 631):
         theta = math.radians(degree)
         x = centerX + radius * math.cos(theta)
         y = centerY + radius * math.sin(theta)

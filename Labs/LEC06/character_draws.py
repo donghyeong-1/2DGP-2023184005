@@ -14,6 +14,9 @@ def move_right():
 def move_bottom():
     pass
 
+def move_left():
+    pass
+
 def move_circle():
     centerX = 400
     centerY = 300
@@ -35,6 +38,7 @@ def move_rectangle():
     move_top()
     move_right()
     move_bottom()
+    move_left()
     pass
 
 def move_triangle():

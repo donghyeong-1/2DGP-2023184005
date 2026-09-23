@@ -20,7 +20,8 @@ def move_right():
         draw_boy(750, y)
 
 def move_bottom():
-    draw_boy(x, y)
+    for x in range(750, 49, -5):
+        draw_boy(x, 50)
 
 def move_left():
     draw_boy(x, y)

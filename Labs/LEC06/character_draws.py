@@ -27,6 +27,9 @@ def move_left():
     for y in range(50, 551, 5):
         draw_boy(50, y)
 
+def move_tri_right():
+    pass
+
 def move_circle():
     centerX = 400
     centerY = 300
@@ -48,7 +51,7 @@ def move_rectangle():
     pass
 
 def move_triangle():
-
+    move_tri_right()
     pass 
 
 while True:

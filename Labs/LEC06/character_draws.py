@@ -13,10 +13,11 @@ def draw_boy(x, y):
 
 def move_top():
     for x in range(50, 751, 5):
-        draw_boy(x, y)
+        draw_boy(x, 550)
 
 def move_right():
-    draw_boy(x, y)
+    for y in range(550, 49, -5):
+        draw_boy(750, y)
 
 def move_bottom():
     draw_boy(x, y)

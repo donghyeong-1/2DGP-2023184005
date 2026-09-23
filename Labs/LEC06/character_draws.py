@@ -24,7 +24,8 @@ def move_bottom():
         draw_boy(x, 50)
 
 def move_left():
-    draw_boy(x, y)
+    for y in range(50, 551, 5):
+        draw_boy(50, y)
 
 def move_circle():
     centerX = 400

@@ -32,9 +32,8 @@ def move_finish():
         draw_boy(x, 100)
 
 def move_tri_right():
-    for x in range(100, 701, 5):
-        y = 100
-        draw_boy(x, y)
+    for x in range(400, 701, 5):
+        draw_boy(x, 100)
 
 def move_tri_leftTop():
     for y in range(100, 501, 5):

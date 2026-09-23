@@ -5,7 +5,8 @@ import math
 open_canvas(800, 600)
 character = load_image('character.png')
 
-
+def move_top():
+    pass
 
 def move_circle():
     centerX = 400
@@ -25,7 +26,7 @@ def move_circle():
     pass
 
 def move_rectangle():
-
+    move_top()
     pass
 
 def move_triangle():

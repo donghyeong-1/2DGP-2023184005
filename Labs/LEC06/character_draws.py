@@ -27,6 +27,10 @@ def move_left():
     for y in range(500, 99, -5):
         draw_boy(50, y)
 
+def move_finish():
+    for x in range(50, 401, 5):
+        draw_boy(x, 100)
+
 def move_tri_right():
     for x in range(100, 701, 5):
         y = 100
@@ -60,6 +64,7 @@ def move_rectangle():
     move_right()
     move_bottom()
     move_left()
+    move_finish()
     pass
 
 def move_triangle():

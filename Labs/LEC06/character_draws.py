@@ -51,7 +51,9 @@ def move_tri_right():
         draw_character(x, y)
 
 def move_tri_leftTop():
-    pass
+    for y in range(100, 501, 5):
+        x = 700 - (y - 100) * (3/4)
+        draw_character(x, y)
 
 def move_tri_leftbottom():
     pass

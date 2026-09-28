@@ -15,14 +15,11 @@ def move_circle():
         x = centerX + radius * math.cos(theta)
         y = centerY + radius * math.sin(theta)
         draw_character(x, y)
-    
-    pass
 
 def move_top():
     print("top")
     for x in range(50, 751, 5):
         draw_character(x, 550)
-      
 
 def draw_character(x, y):
     clear_canvas()
@@ -33,17 +30,14 @@ def draw_character(x, y):
 def move_right():
     for y in range(550, 49, -5):
         draw_character(750, y)
-    pass
 
 def move_bottom():
     for x in range(750, 49, -5):
         draw_character(x, 50)
-    pass
 
 def move_left():
     for y in range(50, 551, 5):
         draw_character(50, y)
-    pass
 
 def move_tri_right():
     for x in range(100, 701, 5):
@@ -65,22 +59,21 @@ def move_rectangle():
     move_right()
     move_bottom()
     move_left()
-    pass
+
 
 def move_triangle():
     move_tri_right()
     move_tri_leftTop()
     move_tri_leftbottom()
-    pass 
+
 
 ##-----------------------------------------------
 
 while True:
-    ##move_circle()
-    ##move_rectangle()
+    move_circle()
+    move_rectangle()
     move_triangle()
     break
-    pass
 
 
 close_canvas()

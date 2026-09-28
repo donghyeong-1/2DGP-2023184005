@@ -20,7 +20,7 @@ def move_circle():
 
 def move_top():
     print("top")
-    for x in range(50, 750, 5):
+    for x in range(50, 751, 5):
         draw_character(x, 550)
       
 
@@ -31,7 +31,8 @@ def draw_character(x, y):
     delay(0.01)
 
 def move_right():
-    print("right")
+    for y in range(550, 49, -5):
+        draw_character(750, y)
     pass
 
 def move_bottom():
@@ -58,7 +59,7 @@ def move_triangle():
 ##-----------------------------------------------
 
 while True:
-    move_circle()
+    ##move_circle()
     move_rectangle()
     move_triangle()
     break

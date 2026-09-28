@@ -56,7 +56,9 @@ def move_tri_leftTop():
         draw_character(x, y)
 
 def move_tri_leftbottom():
-    pass
+    for y in range(500, 99, -5):
+        x = 400 - (500 - y) * (3/4)
+        draw_character(x, y)
 
 def move_rectangle():
     move_top()

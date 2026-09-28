@@ -6,15 +6,19 @@ open_canvas(800, 600)
 character = load_image('character.png')
 
 def move_top():
+    print("top")
     pass
 
 def move_right():
+    print("right")
     pass
 
 def move_bottom():
+    print("bottom")
     pass
 
 def move_left():
+    print("left")
     pass
 
 def move_circle():

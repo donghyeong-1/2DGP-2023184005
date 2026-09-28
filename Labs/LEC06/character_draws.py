@@ -60,19 +60,14 @@ def move_rectangle():
     move_bottom()
     move_left()
 
-
 def move_triangle():
     move_tri_right()
     move_tri_leftTop()
     move_tri_leftbottom()
 
-
-##-----------------------------------------------
-
 while True:
     move_circle()
     move_rectangle()
     move_triangle()
-
 
 close_canvas()

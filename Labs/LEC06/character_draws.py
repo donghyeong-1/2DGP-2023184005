@@ -14,12 +14,8 @@ def move_circle():
         theta = math.radians(degree)
         x = centerX + radius * math.cos(theta)
         y = centerY + radius * math.sin(theta)
-
-        clear_canvas()
-        character.draw(x, y)
-        update_canvas()
-
-        delay(0.01)
+        draw_character(x, y)
+    
     pass
 
 def move_top():
@@ -62,7 +58,7 @@ def move_triangle():
 ##-----------------------------------------------
 
 while True:
-    ##move_circle()
+    move_circle()
     move_rectangle()
     move_triangle()
     break

@@ -51,6 +51,9 @@ def move_tri_right():
 def move_tri_leftTop():
     pass
 
+def move_tri_leftbottom():
+    pass
+
 def move_rectangle():
     move_top()
     move_right()
@@ -61,6 +64,7 @@ def move_rectangle():
 def move_triangle():
     move_tri_right()
     move_tri_leftTop()
+    move_tri_leftbottom()
     pass 
 
 ##-----------------------------------------------

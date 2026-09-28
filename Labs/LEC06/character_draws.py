@@ -46,7 +46,9 @@ def move_left():
     pass
 
 def move_tri_right():
-    pass
+    for x in range(100, 701, 5):
+        y = 100
+        draw_character(x, y)
 
 def move_tri_leftTop():
     pass

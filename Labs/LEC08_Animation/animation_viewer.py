@@ -97,6 +97,15 @@ def handle_events():
             running = False
 
 
+def wait(seconds):
+    # delay 한 번으로 오래 멈추면 그동안 창을 닫을 수 없으므로
+    # 짧게 나누어 기다리면서 이벤트를 계속 처리한다
+    end_time = get_time() + seconds
+    while running and get_time() < end_time:
+        handle_events()
+        delay(0.01)
+
+
 def play_animation(frame_time, frames):
     for count in range(5):
         for frame in frames:
@@ -110,7 +119,7 @@ def play_animation(frame_time, frames):
             delay(frame_time)
 
     # 5회 반복이 끝나면 마지막 프레임을 보여준 채로 1초 정지
-    delay(1.0)
+    wait(1.0)
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

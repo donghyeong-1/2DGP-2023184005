@@ -37,6 +37,12 @@ WALK_FRAMES = [
     (137, 1184, 27, 44, 9, 0), (188, 1184, 28, 46, 8, 0),
 ]
 
+# 재생할 애니메이션 목록 (이름, 프레임 리스트) - 이 순서대로 재생한다
+ANIMATIONS = [
+    ('IDLE', IDLE_FRAMES),
+    ('WALK', WALK_FRAMES),
+]
+
 
 def draw_background():
     r, g, b = BACKGROUND_COLOR
@@ -85,7 +91,7 @@ sonic = load_image(SPRITE_PATH)
 
 running = True
 
-play_animation(IDLE_FRAMES)
-play_animation(WALK_FRAMES)
+for name, frames in ANIMATIONS:
+    play_animation(frames)
 
 close_canvas()

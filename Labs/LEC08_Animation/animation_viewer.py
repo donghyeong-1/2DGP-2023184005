@@ -55,6 +55,11 @@ RUN_FRAMES = [
     (470, 1185, 37, 35, 5, 1), (522, 1186, 37, 34, 5, 2),
 ]
 
+# 피격 (Hurt) - 2프레임, 머리카락이 셀 왼쪽 밖으로 나와 있어 ox가 음수
+HURT_FRAMES = [
+    (509, 247, 45, 34, -6, 0), (567, 248, 45, 34, -6, 1),
+]
+
 # 재생할 애니메이션 목록 (이름, 프레임 리스트) - 이 순서대로 재생한다
 ANIMATIONS = [
     ('IDLE', IDLE_FRAMES),
@@ -62,6 +67,7 @@ ANIMATIONS = [
     ('SPIN DASH', SPIN_DASH_FRAMES),
     ('JUMP', JUMP_FRAMES),
     ('RUN', RUN_FRAMES),
+    ('HURT', HURT_FRAMES),
 ]
 
 

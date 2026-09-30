@@ -57,15 +57,16 @@ def handle_events():
 
 
 def play_animation(frames):
-    for frame in frames:
-        handle_events()
-        if not running:
-            return
-        clear_canvas()
-        draw_background()
-        draw_frame(frame)
-        update_canvas()
-        delay(0.1)
+    for count in range(5):
+        for frame in frames:
+            handle_events()
+            if not running:
+                return
+            clear_canvas()
+            draw_background()
+            draw_frame(frame)
+            update_canvas()
+            delay(0.1)
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

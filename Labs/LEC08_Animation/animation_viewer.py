@@ -23,6 +23,8 @@ sonic = load_image(SPRITE_PATH)
 
 clear_canvas()
 draw_background()
+# Idle & Bored 첫 프레임 (left, bottom, width, height)
+sonic.clip_draw(32, 1411, 29, 45, CENTER_X, CENTER_Y)
 update_canvas()
 delay(1.0)
 

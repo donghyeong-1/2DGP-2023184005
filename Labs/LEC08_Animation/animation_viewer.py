@@ -30,6 +30,13 @@ IDLE_FRAMES = [
     (650, 1411, 38, 43, 2, 0),
 ]
 
+# 걷기 (Basic Motion) - 8프레임
+WALK_FRAMES = [
+    (29, 1236, 39, 46, 5, 0), (81, 1237, 39, 44, 5, 1), (137, 1236, 27, 44, 9, 0),
+    (190, 1236, 28, 46, 10, 0), (30, 1184, 37, 46, 6, 0), (82, 1185, 38, 43, 6, 1),
+    (137, 1184, 27, 44, 9, 0), (188, 1184, 28, 46, 8, 0),
+]
+
 
 def draw_background():
     r, g, b = BACKGROUND_COLOR
@@ -79,5 +86,6 @@ sonic = load_image(SPRITE_PATH)
 running = True
 
 play_animation(IDLE_FRAMES)
+play_animation(WALK_FRAMES)
 
 close_canvas()

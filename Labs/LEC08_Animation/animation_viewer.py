@@ -1,4 +1,5 @@
 from pico2d import *
+import pico2d
 import os
 
 CANVAS_WIDTH, CANVAS_HEIGHT = 800, 600
@@ -17,6 +18,8 @@ BACKGROUND_COLOR = (13, 72, 7)
 # 실행 위치와 상관없이 이 파일이 있는 폴더에서 이미지를 찾는다
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPRITE_PATH = os.path.join(BASE_DIR, 'gold_sonic_sprite.png')
+# 애니메이션 이름 표시용 폰트 (pico2d에 들어 있는 폰트)
+FONT_PATH = os.path.join(os.path.dirname(pico2d.__file__), 'data', 'ConsolaMalgun.ttf')
 
 # 시트의 프레임 한 칸(셀)은 48x48이지만 실제 캐릭터 크기는 프레임마다 다르다.
 # 그래서 프레임마다 캐릭터가 차지하는 영역만 잘라서 쓴다.
@@ -91,6 +94,10 @@ def draw_frame(frame):
                               width * SCALE, height * SCALE)
 
 
+def draw_label(name, count):
+    font.draw(20, CANVAS_HEIGHT - 30, f'{name}  {count + 1}/{REPEAT_COUNT}', (255, 255, 255))
+
+
 def handle_events():
     global running
     events = get_events()
@@ -110,7 +117,7 @@ def wait(seconds):
         delay(0.01)
 
 
-def play_animation(frame_time, frames):
+def play_animation(name, frame_time, frames):
     for count in range(REPEAT_COUNT):
         for frame in frames:
             handle_events()
@@ -119,6 +126,7 @@ def play_animation(frame_time, frames):
             clear_canvas()
             draw_background()
             draw_frame(frame)
+            draw_label(name, count)
             update_canvas()
             delay(frame_time)
 
@@ -129,13 +137,14 @@ def play_animation(frame_time, frames):
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
+font = load_font(FONT_PATH, 24)
 
 running = True
 
 # 모든 애니메이션을 차례로 재생하는 것을 종료할 때까지 무한 반복
 while running:
     for name, frame_time, frames in ANIMATIONS:
-        play_animation(frame_time, frames)
+        play_animation(name, frame_time, frames)
         if not running:
             break
 

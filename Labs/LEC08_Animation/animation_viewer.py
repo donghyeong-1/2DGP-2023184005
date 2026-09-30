@@ -49,12 +49,19 @@ JUMP_FRAMES = [
     (189, 1068, 30, 30, 9, 0), (241, 1068, 30, 30, 9, 0),
 ]
 
+# 달리기 (Full Speed) - 4프레임
+RUN_FRAMES = [
+    (470, 1237, 37, 36, 5, 1), (522, 1238, 37, 35, 5, 2),
+    (470, 1185, 37, 35, 5, 1), (522, 1186, 37, 34, 5, 2),
+]
+
 # 재생할 애니메이션 목록 (이름, 프레임 리스트) - 이 순서대로 재생한다
 ANIMATIONS = [
     ('IDLE', IDLE_FRAMES),
     ('WALK', WALK_FRAMES),
     ('SPIN DASH', SPIN_DASH_FRAMES),
     ('JUMP', JUMP_FRAMES),
+    ('RUN', RUN_FRAMES),
 ]
 
 

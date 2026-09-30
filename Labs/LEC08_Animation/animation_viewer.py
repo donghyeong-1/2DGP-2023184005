@@ -29,14 +29,23 @@ def draw_background():
     draw_rectangle(0, 0, CANVAS_WIDTH - 1, CANVAS_HEIGHT - 1, r, g, b, 255, True)
 
 
+def draw_frame(frame):
+    left, bottom, width, height, ox, oy = frame
+    # 확대된 셀이 화면 중앙에 오도록 셀의 좌하단 위치를 구한다
+    cell_x = CENTER_X - CELL_SIZE * SCALE // 2
+    cell_y = CENTER_Y - CELL_SIZE * SCALE // 2
+    sonic.clip_draw_to_origin(left, bottom, width, height,
+                              cell_x + ox * SCALE, cell_y + oy * SCALE,
+                              width * SCALE, height * SCALE)
+
+
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
 clear_canvas()
 draw_background()
-left, bottom, width, height, ox, oy = IDLE_FIRST_FRAME
-sonic.clip_draw(left, bottom, width, height, CENTER_X, CENTER_Y, width * SCALE, height * SCALE)
+draw_frame(IDLE_FIRST_FRAME)
 update_canvas()
 delay(1.0)
 

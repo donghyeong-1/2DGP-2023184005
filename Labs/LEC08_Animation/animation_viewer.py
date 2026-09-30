@@ -56,20 +56,24 @@ def handle_events():
             running = False
 
 
+def play_animation(frames):
+    for frame in frames:
+        handle_events()
+        if not running:
+            return
+        clear_canvas()
+        draw_background()
+        draw_frame(frame)
+        update_canvas()
+        delay(0.1)
+
+
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
 running = True
 
-for frame in IDLE_FRAMES:
-    handle_events()
-    if not running:
-        break
-    clear_canvas()
-    draw_background()
-    draw_frame(frame)
-    update_canvas()
-    delay(0.1)
+play_animation(IDLE_FRAMES)
 
 close_canvas()

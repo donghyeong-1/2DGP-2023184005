@@ -50,10 +50,11 @@ open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
-clear_canvas()
-draw_background()
-draw_frame(IDLE_FRAMES[0])
-update_canvas()
-delay(1.0)
+for frame in IDLE_FRAMES:
+    clear_canvas()
+    draw_background()
+    draw_frame(frame)
+    update_canvas()
+    delay(0.1)
 
 close_canvas()

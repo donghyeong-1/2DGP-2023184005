@@ -60,14 +60,15 @@ HURT_FRAMES = [
     (509, 247, 45, 34, -6, 0), (567, 248, 45, 34, -6, 1),
 ]
 
-# 재생할 애니메이션 목록 (이름, 프레임 리스트) - 이 순서대로 재생한다
+# 재생할 애니메이션 목록 (이름, 프레임 하나당 시간(초), 프레임 리스트) - 이 순서대로 재생한다
+# 동작마다 자연스러운 속도가 달라서 프레임 시간을 따로 준다
 ANIMATIONS = [
-    ('IDLE', IDLE_FRAMES),
-    ('WALK', WALK_FRAMES),
-    ('SPIN DASH', SPIN_DASH_FRAMES),
-    ('JUMP', JUMP_FRAMES),
-    ('RUN', RUN_FRAMES),
-    ('HURT', HURT_FRAMES),
+    ('IDLE', 0.10, IDLE_FRAMES),
+    ('WALK', 0.09, WALK_FRAMES),
+    ('SPIN DASH', 0.05, SPIN_DASH_FRAMES),
+    ('JUMP', 0.06, JUMP_FRAMES),
+    ('RUN', 0.07, RUN_FRAMES),
+    ('HURT', 0.15, HURT_FRAMES),
 ]
 
 
@@ -96,7 +97,7 @@ def handle_events():
             running = False
 
 
-def play_animation(frames):
+def play_animation(frame_time, frames):
     for count in range(5):
         for frame in frames:
             handle_events()
@@ -106,7 +107,7 @@ def play_animation(frames):
             draw_background()
             draw_frame(frame)
             update_canvas()
-            delay(0.1)
+            delay(frame_time)
 
     # 5회 반복이 끝나면 마지막 프레임을 보여준 채로 1초 정지
     delay(1.0)
@@ -120,8 +121,8 @@ running = True
 
 # 모든 애니메이션을 차례로 재생하는 것을 종료할 때까지 무한 반복
 while running:
-    for name, frames in ANIMATIONS:
-        play_animation(frames)
+    for name, frame_time, frames in ANIMATIONS:
+        play_animation(frame_time, frames)
         if not running:
             break
 

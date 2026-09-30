@@ -4,6 +4,9 @@ import os
 CANVAS_WIDTH, CANVAS_HEIGHT = 800, 600
 CENTER_X, CENTER_Y = CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2
 
+# 원본 캐릭터가 약 45px로 작아서 화면의 절반 이상을 차지하도록 확대한다
+SCALE = 8
+
 # 시트에 투명 배경이 없어서 프레임 셀의 배경색으로 화면을 채운다
 BACKGROUND_COLOR = (13, 72, 7)
 
@@ -24,7 +27,7 @@ sonic = load_image(SPRITE_PATH)
 clear_canvas()
 draw_background()
 # Idle & Bored 첫 프레임 (left, bottom, width, height)
-sonic.clip_draw(32, 1411, 29, 45, CENTER_X, CENTER_Y)
+sonic.clip_draw(32, 1411, 29, 45, CENTER_X, CENTER_Y, 29 * SCALE, 45 * SCALE)
 update_canvas()
 delay(1.0)
 

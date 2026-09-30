@@ -5,7 +5,8 @@ CANVAS_WIDTH, CANVAS_HEIGHT = 800, 600
 CENTER_X, CENTER_Y = CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2
 
 # 원본 캐릭터가 약 45px로 작아서 화면의 절반 이상을 차지하도록 확대한다
-SCALE = 8
+# 서 있는 자세 45px -> 450px(화면 높이의 75%), 구르기/스핀대시(30px) -> 300px(절반)
+SCALE = 10
 
 # 시트에 투명 배경이 없어서 프레임 셀의 배경색으로 화면을 채운다
 BACKGROUND_COLOR = (13, 72, 7)

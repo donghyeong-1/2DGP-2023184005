@@ -8,6 +8,9 @@ CENTER_X, CENTER_Y = CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2
 # 서 있는 자세 45px -> 450px(화면 높이의 75%), 구르기/스핀대시(30px) -> 300px(절반)
 SCALE = 10
 
+REPEAT_COUNT = 5    # 애니메이션 하나를 반복하는 횟수
+PAUSE_TIME = 1.0    # 반복이 끝난 뒤 다음 애니메이션까지 정지하는 시간(초)
+
 # 시트에 투명 배경이 없어서 프레임 셀의 배경색으로 화면을 채운다
 BACKGROUND_COLOR = (13, 72, 7)
 
@@ -108,7 +111,7 @@ def wait(seconds):
 
 
 def play_animation(frame_time, frames):
-    for count in range(5):
+    for count in range(REPEAT_COUNT):
         for frame in frames:
             handle_events()
             if not running:
@@ -119,8 +122,8 @@ def play_animation(frame_time, frames):
             update_canvas()
             delay(frame_time)
 
-    # 5회 반복이 끝나면 마지막 프레임을 보여준 채로 1초 정지
-    wait(1.0)
+    # 반복이 끝나면 마지막 프레임을 보여준 채로 정지
+    wait(PAUSE_TIME)
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

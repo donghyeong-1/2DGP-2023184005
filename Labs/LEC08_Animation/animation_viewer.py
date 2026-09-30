@@ -68,6 +68,9 @@ def play_animation(frames):
             update_canvas()
             delay(0.1)
 
+    # 5회 반복이 끝나면 마지막 프레임을 보여준 채로 1초 정지
+    delay(1.0)
+
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 

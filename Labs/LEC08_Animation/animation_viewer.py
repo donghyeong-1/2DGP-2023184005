@@ -14,6 +14,15 @@ BACKGROUND_COLOR = (13, 72, 7)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPRITE_PATH = os.path.join(BASE_DIR, 'gold_sonic_sprite.png')
 
+# 시트의 프레임 한 칸(셀)은 48x48이지만 실제 캐릭터 크기는 프레임마다 다르다.
+# 그래서 프레임마다 캐릭터가 차지하는 영역만 잘라서 쓴다.
+# 프레임 = (left, bottom, width, height, ox, oy)
+#   left, bottom, width, height : pico2d 좌표(좌하단 원점) 기준 잘라낼 영역
+#   ox, oy : 셀 좌하단에서 잘라낸 영역까지의 거리 (프레임끼리 발 위치를 맞추는 용도)
+CELL_SIZE = 48
+
+IDLE_FIRST_FRAME = (32, 1411, 29, 45, 8, 0)
+
 
 def draw_background():
     r, g, b = BACKGROUND_COLOR
@@ -26,8 +35,8 @@ sonic = load_image(SPRITE_PATH)
 
 clear_canvas()
 draw_background()
-# Idle & Bored 첫 프레임 (left, bottom, width, height)
-sonic.clip_draw(32, 1411, 29, 45, CENTER_X, CENTER_Y, 29 * SCALE, 45 * SCALE)
+left, bottom, width, height, ox, oy = IDLE_FIRST_FRAME
+sonic.clip_draw(left, bottom, width, height, CENTER_X, CENTER_Y, width * SCALE, height * SCALE)
 update_canvas()
 delay(1.0)
 

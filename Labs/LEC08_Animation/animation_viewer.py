@@ -21,7 +21,14 @@ SPRITE_PATH = os.path.join(BASE_DIR, 'gold_sonic_sprite.png')
 #   ox, oy : 셀 좌하단에서 잘라낸 영역까지의 거리 (프레임끼리 발 위치를 맞추는 용도)
 CELL_SIZE = 48
 
-IDLE_FIRST_FRAME = (32, 1411, 29, 45, 8, 0)
+# 대기 (Idle & Bored) - 13프레임
+IDLE_FRAMES = [
+    (32, 1411, 29, 45, 8, 0), (83, 1411, 30, 45, 7, 0), (134, 1411, 31, 44, 6, 0),
+    (186, 1411, 31, 45, 6, 0), (237, 1411, 33, 45, 5, 0), (290, 1411, 32, 45, 6, 0),
+    (341, 1411, 33, 45, 5, 0), (392, 1411, 34, 44, 4, 0), (446, 1411, 32, 45, 6, 0),
+    (497, 1411, 33, 45, 5, 0), (548, 1411, 34, 44, 4, 0), (600, 1411, 34, 44, 4, 0),
+    (650, 1411, 38, 43, 2, 0),
+]
 
 
 def draw_background():
@@ -45,7 +52,7 @@ sonic = load_image(SPRITE_PATH)
 
 clear_canvas()
 draw_background()
-draw_frame(IDLE_FIRST_FRAME)
+draw_frame(IDLE_FRAMES[0])
 update_canvas()
 delay(1.0)
 

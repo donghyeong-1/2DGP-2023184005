@@ -130,6 +130,20 @@ WIN_POSE_FRAMES = [
     (112, 2, 35, 30),
 ]
 
+# 재생할 10종 애니메이션 목록 (이름, 프레임 하나당 시간(초), 프레임 리스트)
+ANIMATIONS = [
+    ('IDLE', 0.08, IDLE_FRAMES),
+    ('WALK', 0.07, WALK_FRAMES),
+    ('RUN', 0.06, RUN_FRAMES),
+    ('PEELOUT', 0.04, PEELOUT_FRAMES),
+    ('ROLL', 0.04, ROLL_FRAMES),
+    ('SPIN DASH', 0.04, SPIN_DASH_FRAMES),
+    ('PUSH', 0.09, PUSH_FRAMES),
+    ('SKID', 0.06, SKID_FRAMES),
+    ('JUMP', 0.06, JUMP_FRAMES),
+    ('WIN POSE', 0.08, WIN_POSE_FRAMES),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -168,15 +182,9 @@ sonic = load_image(SPRITE_PATH)
 
 running = True
 
-play_animation('IDLE', 0.08, IDLE_FRAMES)
-play_animation('WALK', 0.07, WALK_FRAMES)
-play_animation('RUN', 0.06, RUN_FRAMES)
-play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
-play_animation('ROLL', 0.04, ROLL_FRAMES)
-play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
-play_animation('PUSH', 0.09, PUSH_FRAMES)
-play_animation('SKID', 0.06, SKID_FRAMES)
-play_animation('JUMP', 0.06, JUMP_FRAMES)
-play_animation('WIN POSE', 0.08, WIN_POSE_FRAMES)
+for name, frame_time, frames in ANIMATIONS:
+    play_animation(name, frame_time, frames)
+    if not running:
+        break
 
 close_canvas()

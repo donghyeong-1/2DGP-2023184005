@@ -158,7 +158,7 @@ WIN_POSE_FRAMES = [
 ANIMATIONS = [
     ('IDLE',          0.08, IDLE_FRAMES,          (600, 400), (600, 400)),
     ('WALK',          0.07, WALK_FRAMES,          (200, 400), (1000, 400)),
-    ('RUN',           0.06, RUN_FRAMES,           (150, 400), (1050, 400)),
+    ('RUN',           0.06, RUN_FRAMES,           (600, 400), (600, 400)),
     ('ROLL',          0.04, ROLL_FRAMES,          (150, 400), (1050, 400)),
     ('SPIN BALL',     0.04, SPIN_BALL_FRAMES,     (100, 400), (1100, 400)),
     ('PEELOUT',       0.04, PEELOUT_FRAMES,       (100, 400), (1100, 400)),

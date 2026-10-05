@@ -52,14 +52,15 @@ open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sonic = load_image(SPRITE_PATH)
 
 running = True
-first_frame = IDLE_FRAMES[0]
 
-while running:
+# 대기 애니메이션 프레임을 순서대로 재생
+for frame in IDLE_FRAMES:
     handle_events()
+    if not running:
+        break
     clear_canvas()
-    draw_frame(first_frame)
+    draw_frame(frame)
     update_canvas()
-    delay(0.05)
-    break
+    delay(0.08)
 
 close_canvas()

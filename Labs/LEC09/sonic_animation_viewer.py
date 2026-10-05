@@ -165,8 +165,8 @@ ANIMATIONS = [
     ('SUPER PEELOUT', 0.04, SUPER_PEELOUT_FRAMES, (100, 400), (1100, 400)),
     ('SPRING JUMP',   0.06, SPRING_JUMP_FRAMES,   (600, 150), (600, 650)),
     ('FALL',          0.12, FALL_FRAMES,          (600, 650), (600, 200)),
-    ('3D RUN',        0.06, RUN_3D_FRAMES,        (600, 550), (600, 250)),
-    ('HURT',          0.15, HURT_FRAMES,          (700, 400), (300, 400)),
+    ('3D RUN',        0.06, RUN_3D_FRAMES,        (600, 400), (600, 400)),
+    ('HURT',          0.15, HURT_FRAMES,          (600, 400), (600, 400)),
     ('WIN POSE',      0.15, WIN_POSE_FRAMES,      (600, 400), (600, 400)),
 ]
 

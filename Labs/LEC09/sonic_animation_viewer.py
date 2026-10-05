@@ -14,6 +14,18 @@ SHEET_HEIGHT = 525
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPRITE_PATH = os.path.join(BASE_DIR, 'sonic-sprite.png')
 
+# 01. 대기 (IDLE) - 8프레임
+IDLE_FRAMES = [
+    (1, 39, 29, 38),
+    (31, 40, 26, 38),
+    (58, 39, 58, 39),
+    (118, 40, 30, 38),
+    (150, 40, 30, 38),
+    (182, 39, 87, 39),
+    (270, 45, 24, 31),
+    (302, 51, 29, 25),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -40,7 +52,7 @@ open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sonic = load_image(SPRITE_PATH)
 
 running = True
-first_frame = (1, 39, 29, 39)
+first_frame = IDLE_FRAMES[0]
 
 while running:
     handle_events()
@@ -48,7 +60,6 @@ while running:
     draw_frame(first_frame)
     update_canvas()
     delay(0.05)
-    # 0.5초 후 테스트 종료 (향후 루프로 확장)
     break
 
 close_canvas()

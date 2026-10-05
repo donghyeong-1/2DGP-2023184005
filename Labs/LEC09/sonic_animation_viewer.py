@@ -200,9 +200,11 @@ sonic = load_image(SPRITE_PATH)
 
 running = True
 
-for name, frame_time, frames in ANIMATIONS:
-    play_animation(name, frame_time, frames)
-    if not running:
-        break
+# 모든 애니메이션을 차례로 재생하는 것을 종료할 때까지 무한 반복
+while running:
+    for name, frame_time, frames in ANIMATIONS:
+        play_animation(name, frame_time, frames)
+        if not running:
+            break
 
 close_canvas()

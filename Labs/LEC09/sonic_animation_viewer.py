@@ -42,6 +42,16 @@ WALK_FRAMES = [
     (370, 79, 29, 38),
 ]
 
+# 03. 달리기 (RUN) - 6프레임
+RUN_FRAMES = [
+    (2, 124, 32, 39),
+    (40, 124, 34, 38),
+    (90, 125, 34, 37),
+    (130, 121, 34, 41),
+    (181, 122, 34, 41),
+    (228, 122, 32, 39),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -82,5 +92,6 @@ running = True
 
 play_animation('IDLE', 0.08, IDLE_FRAMES)
 play_animation('WALK', 0.07, WALK_FRAMES)
+play_animation('RUN', 0.06, RUN_FRAMES)
 
 close_canvas()

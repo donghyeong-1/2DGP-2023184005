@@ -83,6 +83,16 @@ SPIN_DASH_FRAMES = [
     (186, 238, 31, 35),
 ]
 
+# 07. 밀기 (PUSH) - 6프레임
+PUSH_FRAMES = [
+    (1, 283, 29, 34),
+    (36, 283, 30, 34),
+    (72, 286, 39, 31),
+    (123, 285, 39, 32),
+    (172, 286, 39, 31),
+    (218, 285, 38, 32),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -127,5 +137,6 @@ play_animation('RUN', 0.06, RUN_FRAMES)
 play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
 play_animation('ROLL', 0.04, ROLL_FRAMES)
 play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
+play_animation('PUSH', 0.09, PUSH_FRAMES)
 
 close_canvas()

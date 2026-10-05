@@ -1,4 +1,5 @@
 from pico2d import *
+import pico2d
 import os
 
 CANVAS_WIDTH, CANVAS_HEIGHT = 1200, 800
@@ -18,6 +19,8 @@ SHEET_HEIGHT = 525
 # 실행 위치와 상관없이 이 파일이 있는 폴더에서 이미지를 찾는다
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPRITE_PATH = os.path.join(BASE_DIR, 'sonic-sprite.png')
+# 애니메이션 이름 표시용 폰트 (pico2d 내장 폰트)
+FONT_PATH = os.path.join(os.path.dirname(pico2d.__file__), 'data', 'ConsolaMalgun.ttf')
 
 # 01. 대기 (IDLE) - 8프레임
 IDLE_FRAMES = [
@@ -160,6 +163,10 @@ def draw_frame(frame):
                     width * SCALE, height * SCALE)
 
 
+def draw_label(name, count):
+    font.draw(30, CANVAS_HEIGHT - 40, f'{name}  {count + 1}/{REPEAT_COUNT}', (255, 255, 255))
+
+
 def handle_events():
     global running
     events = get_events()
@@ -187,6 +194,7 @@ def play_animation(name, frame_time, frames):
                 return
             clear_canvas()
             draw_frame(frame)
+            draw_label(name, count)
             update_canvas()
             delay(frame_time)
 
@@ -197,6 +205,7 @@ def play_animation(name, frame_time, frames):
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
+font = load_font(FONT_PATH, 28)
 
 running = True
 

@@ -212,19 +212,29 @@ def wait(seconds):
         delay(0.01)
 
 
-def play_animation(name, frame_time, frames):
+def play_animation(name, frame_time, frames, start_pos, end_pos):
+    # 5회 반복 동안의 전체 진행 스텝 수
+    total_steps = REPEAT_COUNT * len(frames)
+    cur_x, cur_y = start_pos
+
     for count in range(REPEAT_COUNT):
-        for frame in frames:
+        for frame_idx, frame in enumerate(frames):
             handle_events()
             if not running:
                 return
+
+            # 전체 5회 반복 동안의 진행률(0.0 ~ 1.0)에 따라 현재 위치 계산
+            step = count * len(frames) + frame_idx
+            progress = step / (total_steps - 1) if total_steps > 1 else 0.0
+            cur_x, cur_y = calculate_position(start_pos, end_pos, progress)
+
             clear_canvas()
-            draw_frame(frame)
+            draw_frame(frame, cur_x, cur_y)
             draw_label(name, count)
             update_canvas()
             delay(frame_time)
 
-    # 반복이 끝나면 마지막 프레임을 보여준 채로 정지
+    # 반복이 끝나면 목표 지점의 마지막 프레임을 보여준 채로 1초 정지
     wait(PAUSE_TIME)
 
 
@@ -240,8 +250,8 @@ def main():
 
     # 모든 애니메이션을 차례로 재생하는 것을 종료할 때까지 무한 반복
     while running:
-        for name, frame_time, frames in ANIMATIONS:
-            play_animation(name, frame_time, frames)
+        for name, frame_time, frames, start_pos, end_pos in ANIMATIONS:
+            play_animation(name, frame_time, frames, start_pos, end_pos)
             if not running:
                 break
 

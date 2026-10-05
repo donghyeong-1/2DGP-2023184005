@@ -7,6 +7,11 @@ CENTER_X, CENTER_Y = CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2
 # 캐릭터를 4배 확대하여 출력
 SCALE = 4
 
+# 애니메이션 하나를 반복하는 횟수
+REPEAT_COUNT = 5
+# 반복이 끝난 뒤 다음 애니메이션까지 정지하는 시간(초)
+PAUSE_TIME = 1.0
+
 # 스프라이트 시트 원본 높이 (상단 기준 좌표 변환용)
 SHEET_HEIGHT = 525
 

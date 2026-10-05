@@ -170,6 +170,15 @@ def handle_events():
             running = False
 
 
+def wait(seconds):
+    # delay 한 번으로 오래 멈추면 그동안 창을 닫을 수 없으므로
+    # 짧게 나누어 기다리면서 이벤트를 계속 처리한다
+    end_time = get_time() + seconds
+    while running and get_time() < end_time:
+        handle_events()
+        delay(0.01)
+
+
 def play_animation(name, frame_time, frames):
     for count in range(REPEAT_COUNT):
         for frame in frames:

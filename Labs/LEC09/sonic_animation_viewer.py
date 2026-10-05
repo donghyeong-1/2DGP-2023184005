@@ -26,6 +26,22 @@ IDLE_FRAMES = [
     (302, 51, 29, 25),
 ]
 
+# 02. 걷기 (WALK) - 12프레임
+WALK_FRAMES = [
+    (8, 80, 26, 37),
+    (37, 80, 25, 36),
+    (65, 80, 31, 38),
+    (97, 80, 37, 36),
+    (135, 80, 32, 35),
+    (170, 79, 32, 37),
+    (206, 79, 26, 38),
+    (238, 80, 24, 37),
+    (263, 80, 30, 37),
+    (295, 80, 35, 36),
+    (334, 80, 32, 36),
+    (370, 79, 29, 38),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -65,5 +81,6 @@ sonic = load_image(SPRITE_PATH)
 running = True
 
 play_animation('IDLE', 0.08, IDLE_FRAMES)
+play_animation('WALK', 0.07, WALK_FRAMES)
 
 close_canvas()

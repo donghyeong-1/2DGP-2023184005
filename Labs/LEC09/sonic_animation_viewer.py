@@ -47,20 +47,23 @@ def handle_events():
             running = False
 
 
+def play_animation(name, frame_time, frames):
+    for frame in frames:
+        handle_events()
+        if not running:
+            return
+        clear_canvas()
+        draw_frame(frame)
+        update_canvas()
+        delay(frame_time)
+
+
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
 running = True
 
-# 대기 애니메이션 프레임을 순서대로 재생
-for frame in IDLE_FRAMES:
-    handle_events()
-    if not running:
-        break
-    clear_canvas()
-    draw_frame(frame)
-    update_canvas()
-    delay(0.08)
+play_animation('IDLE', 0.08, IDLE_FRAMES)
 
 close_canvas()

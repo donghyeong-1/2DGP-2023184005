@@ -105,6 +105,18 @@ SKID_FRAMES = [
     (232, 341, 38, 26),
 ]
 
+# 09. 점프 (JUMP) - 8프레임
+JUMP_FRAMES = [
+    (1, 379, 27, 38),
+    (31, 379, 31, 36),
+    (64, 379, 31, 36),
+    (99, 377, 33, 38),
+    (136, 379, 32, 35),
+    (176, 379, 33, 36),
+    (217, 379, 33, 36),
+    (254, 378, 33, 36),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -151,5 +163,6 @@ play_animation('ROLL', 0.04, ROLL_FRAMES)
 play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
 play_animation('PUSH', 0.09, PUSH_FRAMES)
 play_animation('SKID', 0.06, SKID_FRAMES)
+play_animation('JUMP', 0.06, JUMP_FRAMES)
 
 close_canvas()

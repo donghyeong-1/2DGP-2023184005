@@ -171,14 +171,15 @@ def handle_events():
 
 
 def play_animation(name, frame_time, frames):
-    for frame in frames:
-        handle_events()
-        if not running:
-            return
-        clear_canvas()
-        draw_frame(frame)
-        update_canvas()
-        delay(frame_time)
+    for count in range(REPEAT_COUNT):
+        for frame in frames:
+            handle_events()
+            if not running:
+                return
+            clear_canvas()
+            draw_frame(frame)
+            update_canvas()
+            delay(frame_time)
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

@@ -93,6 +93,18 @@ PUSH_FRAMES = [
     (218, 285, 38, 32),
 ]
 
+# 08. 제동 (SKID) - 8프레임
+SKID_FRAMES = [
+    (1, 326, 24, 44),
+    (31, 329, 29, 41),
+    (65, 328, 20, 42),
+    (90, 328, 25, 42),
+    (119, 328, 25, 42),
+    (149, 328, 20, 42),
+    (184, 341, 39, 28),
+    (232, 341, 38, 26),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -138,5 +150,6 @@ play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
 play_animation('ROLL', 0.04, ROLL_FRAMES)
 play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
 play_animation('PUSH', 0.09, PUSH_FRAMES)
+play_animation('SKID', 0.06, SKID_FRAMES)
 
 close_canvas()

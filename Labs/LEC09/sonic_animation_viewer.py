@@ -117,6 +117,19 @@ JUMP_FRAMES = [
     (254, 378, 33, 36),
 ]
 
+# 10. 승리포즈 (WIN POSE) - 9프레임
+WIN_POSE_FRAMES = [
+    (6, 429, 34, 39),
+    (49, 426, 34, 42),
+    (96, 427, 23, 38),
+    (125, 427, 23, 38),
+    (33, 9, 15, 23),
+    (49, 9, 13, 23),
+    (63, 9, 13, 23),
+    (78, 3, 21, 29),
+    (112, 2, 35, 30),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -164,5 +177,6 @@ play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
 play_animation('PUSH', 0.09, PUSH_FRAMES)
 play_animation('SKID', 0.06, SKID_FRAMES)
 play_animation('JUMP', 0.06, JUMP_FRAMES)
+play_animation('WIN POSE', 0.08, WIN_POSE_FRAMES)
 
 close_canvas()

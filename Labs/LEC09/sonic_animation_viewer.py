@@ -64,6 +64,15 @@ PEELOUT_FRAMES = [
     (230, 170, 31, 29),
 ]
 
+# 05. 구르기 (ROLL) - 5프레임
+ROLL_FRAMES = [
+    (1, 206, 30, 27),
+    (36, 206, 29, 27),
+    (70, 206, 29, 27),
+    (105, 206, 29, 27),
+    (139, 206, 29, 27),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -106,5 +115,6 @@ play_animation('IDLE', 0.08, IDLE_FRAMES)
 play_animation('WALK', 0.07, WALK_FRAMES)
 play_animation('RUN', 0.06, RUN_FRAMES)
 play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
+play_animation('ROLL', 0.04, ROLL_FRAMES)
 
 close_canvas()

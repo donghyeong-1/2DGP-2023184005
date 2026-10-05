@@ -52,6 +52,18 @@ RUN_FRAMES = [
     (228, 122, 32, 39),
 ]
 
+# 04. 질주 (PEELOUT) - 8프레임
+PEELOUT_FRAMES = [
+    (1, 169, 29, 30),
+    (35, 167, 29, 31),
+    (67, 169, 30, 29),
+    (98, 169, 31, 29),
+    (131, 168, 29, 30),
+    (162, 168, 29, 31),
+    (193, 170, 30, 29),
+    (230, 170, 31, 29),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -93,5 +105,6 @@ running = True
 play_animation('IDLE', 0.08, IDLE_FRAMES)
 play_animation('WALK', 0.07, WALK_FRAMES)
 play_animation('RUN', 0.06, RUN_FRAMES)
+play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
 
 close_canvas()

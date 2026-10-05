@@ -190,6 +190,9 @@ def play_animation(name, frame_time, frames):
             update_canvas()
             delay(frame_time)
 
+    # 반복이 끝나면 마지막 프레임을 보여준 채로 정지
+    wait(PAUSE_TIME)
+
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 

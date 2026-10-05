@@ -25,17 +25,30 @@ def draw_frame(frame):
                     width * SCALE, height * SCALE)
 
 
+def handle_events():
+    global running
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            running = False
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            running = False
+
+
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
-# 대기 자세 첫 프레임
+running = True
 first_frame = (1, 39, 29, 39)
 
-clear_canvas()
-draw_frame(first_frame)
-update_canvas()
-
-delay(1)
+while running:
+    handle_events()
+    clear_canvas()
+    draw_frame(first_frame)
+    update_canvas()
+    delay(0.05)
+    # 0.5초 후 테스트 종료 (향후 루프로 확장)
+    break
 
 close_canvas()

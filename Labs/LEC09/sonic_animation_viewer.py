@@ -29,6 +29,13 @@ open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 sonic = load_image(SPRITE_PATH)
 
+# 대기 자세 첫 프레임
+first_frame = (1, 39, 29, 39)
+
+clear_canvas()
+draw_frame(first_frame)
+update_canvas()
+
 delay(1)
 
 close_canvas()

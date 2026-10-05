@@ -170,13 +170,22 @@ ANIMATIONS = [
 ]
 
 
-def draw_frame(frame):
+def calculate_position(start_pos, end_pos, progress):
+    # progress(0.0 ~ 1.0)에 따라 시작 위치와 목표 위치 사이를 선형 보간한다
+    start_x, start_y = start_pos
+    end_x, end_y = end_pos
+    x = int(start_x + (end_x - start_x) * progress)
+    y = int(start_y + (end_y - start_y) * progress)
+    return x, y
+
+
+def draw_frame(frame, x=CENTER_X, y=CENTER_Y):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
     left, top, width, height = frame
     # pico2d 좌하단 기준 bottom 좌표로 변환
     bottom = SHEET_HEIGHT - (top + height)
     sonic.clip_draw(left, bottom, width, height,
-                    CENTER_X, CENTER_Y,
+                    x, y,
                     width * SCALE, height * SCALE)
 
 

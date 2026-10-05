@@ -152,20 +152,21 @@ WIN_POSE_FRAMES = [
     (125, 427, 23, 39),
 ]
 
-# 재생할 12종 애니메이션 목록 (이름, 프레임 하나당 시간(초), 프레임 리스트)
+# 재생할 12종 애니메이션 목록
+# (동작명, 프레임당 시간(초), 프레임 리스트, 시작 좌표(x, y), 종료 좌표(x, y))
 ANIMATIONS = [
-    ('IDLE', 0.08, IDLE_FRAMES),
-    ('WALK', 0.07, WALK_FRAMES),
-    ('RUN', 0.06, RUN_FRAMES),
-    ('ROLL', 0.04, ROLL_FRAMES),
-    ('SPIN BALL', 0.04, SPIN_BALL_FRAMES),
-    ('PEELOUT', 0.04, PEELOUT_FRAMES),
-    ('SUPER PEELOUT', 0.04, SUPER_PEELOUT_FRAMES),
-    ('SPRING JUMP', 0.06, SPRING_JUMP_FRAMES),
-    ('FALL', 0.12, FALL_FRAMES),
-    ('3D RUN', 0.06, RUN_3D_FRAMES),
-    ('HURT', 0.15, HURT_FRAMES),
-    ('WIN POSE', 0.15, WIN_POSE_FRAMES),
+    ('IDLE',          0.08, IDLE_FRAMES,          (600, 400), (600, 400)),
+    ('WALK',          0.07, WALK_FRAMES,          (200, 400), (1000, 400)),
+    ('RUN',           0.06, RUN_FRAMES,           (150, 400), (1050, 400)),
+    ('ROLL',          0.04, ROLL_FRAMES,          (150, 400), (1050, 400)),
+    ('SPIN BALL',     0.04, SPIN_BALL_FRAMES,     (100, 400), (1100, 400)),
+    ('PEELOUT',       0.04, PEELOUT_FRAMES,       (100, 400), (1100, 400)),
+    ('SUPER PEELOUT', 0.04, SUPER_PEELOUT_FRAMES, (100, 400), (1100, 400)),
+    ('SPRING JUMP',   0.06, SPRING_JUMP_FRAMES,   (600, 150), (600, 650)),
+    ('FALL',          0.12, FALL_FRAMES,          (600, 650), (600, 200)),
+    ('3D RUN',        0.06, RUN_3D_FRAMES,        (600, 550), (600, 250)),
+    ('HURT',          0.15, HURT_FRAMES,          (700, 400), (300, 400)),
+    ('WIN POSE',      0.15, WIN_POSE_FRAMES,      (600, 400), (600, 400)),
 ]
 
 

@@ -73,6 +73,16 @@ ROLL_FRAMES = [
     (139, 206, 29, 27),
 ]
 
+# 06. 스핀대시 (SPIN DASH) - 6프레임
+SPIN_DASH_FRAMES = [
+    (1, 239, 29, 34),
+    (36, 239, 30, 34),
+    (75, 239, 30, 35),
+    (111, 238, 31, 35),
+    (149, 239, 30, 35),
+    (186, 238, 31, 35),
+]
+
 
 def draw_frame(frame):
     # frame = (left, top, width, height) - 시트 좌상단 기준 좌표
@@ -116,5 +126,6 @@ play_animation('WALK', 0.07, WALK_FRAMES)
 play_animation('RUN', 0.06, RUN_FRAMES)
 play_animation('PEELOUT', 0.04, PEELOUT_FRAMES)
 play_animation('ROLL', 0.04, ROLL_FRAMES)
+play_animation('SPIN DASH', 0.04, SPIN_DASH_FRAMES)
 
 close_canvas()

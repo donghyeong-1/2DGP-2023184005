@@ -4,13 +4,11 @@ import math
 open_canvas(800, 600)
 character = load_image('character.png')
 
-
 def draw_character(x, y):
 	clear_canvas()
 	character.draw(x, y)
 	update_canvas()
 	delay(0.01)
-
 
 def move_circle():
 	center_x = 400
@@ -22,7 +20,6 @@ def move_circle():
 		x = center_x + radius * math.cos(theta)
 		y = center_y + radius * math.sin(theta)
 		draw_character(x, y)
-
 
 def move_rectangle():
 	for x in range(400, 751, 5):
@@ -36,7 +33,6 @@ def move_rectangle():
 	for x in range(50, 401, 5):
 		draw_character(x, 100)
 
-
 def move_triangle():
 	for x in range(400, 701, 5):
 		draw_character(x, 100)
@@ -49,11 +45,9 @@ def move_triangle():
 	for x in range(100, 401, 5):
 		draw_character(x, 100)
 
-
 while True:
 	move_circle()
 	move_rectangle()
 	move_triangle()
-
 
 close_canvas()
